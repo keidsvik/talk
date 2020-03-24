@@ -2,8 +2,13 @@ $(document).ready(function() {
   $("button#hello").click(function() {
     $("ul#user").prepend("<li>Hello!</li>");
     $("ul#webpage").prepend("<li>Why hello there!</li>");
-  });
-
+    $("ul#webpage").children("li").first().click(function(event) {
+      $(event.target).remove();
+    });
+    $("ul#user").children("li").first().click(function() {
+      $(this).remove();
+    });
+});
   $("button#goodbye").click(function() {
     $("ul#user").prepend("<li>Goodbye!</li>");
     $("ul#webpage").prepend("<li>Goodbye, dear user!</li>");
@@ -13,4 +18,5 @@ $(document).ready(function() {
     $("ul#user").prepend("<li>Stop copying me!</li>");
     $("ul#webpage").prepend("<li>Pardon me. I meant no offense.</li>");
   });
+ 
 });
